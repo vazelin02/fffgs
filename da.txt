@@ -1,0 +1,14 @@
+private  void openCamera()
+    {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, 0);
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // TODO Auto-generated method stub
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == RESULT_OK) {
+            Bitmap bp = (Bitmap) data.getExtras().get("data");
+            imageView.setImageBitmap(bp);
+        }
+    }
