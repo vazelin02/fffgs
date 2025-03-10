@@ -1,0 +1,39 @@
+  _count = Integer.parseInt(count.getText().toString());
+
+        minusBtn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                _count--;
+
+                count.setText(Integer.toString(_count));
+            }
+        });
+        plusBtn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                _count++;
+                count.setText(Integer.toString(_count));
+            }
+        });
+
+        deleteBtn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              ViewGroup view = (ViewGroup) mainView.getParent();
+              view.removeView(mainView);
+            String s = main.getText().toString();
+            String[] _s = s.split(" ",1);
+            int _count = Integer.parseInt(_s[1]);
+            main.setText(("Товаров " +Integer.toString(_count)));
+
+            }
+        });
+
+        deleteIcon.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ViewGroup view = (ViewGroup) mainView.getParent();
+                view.removeView(mainView);
+
+            }
+        });
